@@ -1,0 +1,61 @@
+/*
+ * Copyright (c) 2009-2026 MOIS (MINISTRY OF THE INTERIOR AND SAFETY).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package egovframework.example.sample.service;
+
+import org.egovframe.rte.ptl.reactive.validation.EgovNullCheck;
+
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * @Class Name : SampleVO.java
+ * @Description : SampleVO Class
+ * @Modification Information
+ * @
+ * @  수정일      수정자              수정내용
+ * @ ---------   ---------   -------------------------------
+ * @ 2009.03.16           최초생성
+ *
+ * @author 개발프레임웍크 실행환경 개발팀
+ * @since 2009. 03.16
+ * @version 1.0
+ * @see
+ */
+@Getter
+@Setter
+public class SampleVO extends SampleDefaultVO {
+
+	private static final long serialVersionUID = 1L;
+
+	/** 아이디 */
+	private String id;
+
+	/** 이름 */
+	@EgovNullCheck(message="{confirm.required.name}")
+	private String name;
+
+	/** 내용 */
+	@EgovNullCheck(message="{confirm.required.description}")
+	private String description;
+
+	/** 사용여부 */
+	private String useYn;
+
+	/** 등록자 */
+	@EgovNullCheck(message="{confirm.required.user}")
+	private String regUser;
+
+}
