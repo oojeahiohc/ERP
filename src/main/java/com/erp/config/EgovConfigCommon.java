@@ -37,7 +37,7 @@ public class EgovConfigCommon {
 	}
 
 	@Bean
-	 MessageSourceAccessor messageSourceAccessor() {
+	MessageSourceAccessor messageSourceAccessor() {
 		return new MessageSourceAccessor(this.messageSource());
 	}
 

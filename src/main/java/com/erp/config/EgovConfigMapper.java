@@ -34,6 +34,6 @@ public class EgovConfigMapper {
 	@Bean(name = "sqlSessionTemplate") // 혼동 방지를 위한 명시적 Bean Name 을 표기
 	public SqlSessionTemplate sqlSession(@Qualifier("sqlSession") SqlSessionFactory factory) {
     	return new SqlSessionTemplate(factory);
-  	}
+	}
 
 }
