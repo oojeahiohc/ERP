@@ -22,8 +22,15 @@ public class GlobalExceptionHandler {
         view.setStatus(ex.getStatusCode());
         view.addObject("errorCode", Errors.code(ex));
         view.addObject("message", ex.getReason());
-        view.addObject("fieldErrors", Errors.fields(ex));
-        view.addObject("shortages", Errors.shortages(ex));
+        var fields = Errors.fields(ex);
+        if (!fields.isEmpty()) {
+            view.addObject("fieldErrors", fields);
+        }
+
+        var shortages = Errors.shortages(ex);
+        if (!shortages.isEmpty()) {
+            view.addObject("shortages", shortages);
+        }
         return view;
     }
 
